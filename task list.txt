@@ -1,0 +1,31 @@
+[]layout da tela inicial com animação com o nome do jogo
+[]animação dos personagens andando
+[]sistema de mudaça de cenario
+[]sistema de salvamento
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+[]
+
+
+game com flauta doce
+    segurar Shift para segurar e segurar shift + 
+        1 -> Dó
+        2 -> Dó#
+        3 -> Ré
+        4 -> Ré#
+        5 -> Mi
+        6 -> Fá
+        7 -> Fá#
+        8 -> Sol
+        9 -> Sol#
+        0 -> Lá
+        - -> Lá#
+        = -> Si

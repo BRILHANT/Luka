@@ -43,12 +43,8 @@ end
 function love.draw()
 end
 
-function love.keyboardpressed(key)
-    if key == "shift" then
-        segurarFlauta = not segurarFlauta
-    end
+function love.keypressed(key)
 
-    if terFlauta and segurarFlauta then
         if key== "1" then
             soundsNotes.C:play()
         elseif key== "2" then
@@ -68,5 +64,4 @@ function love.keyboardpressed(key)
         elseif key=="9" then
             soundsNotes.D6:play()
         end
-    end
 end

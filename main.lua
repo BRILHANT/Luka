@@ -1,6 +1,15 @@
 function love.load()
-    width = love.graphics.getWidth()
-    height = love.graphics.getHeight()
+    love.graphics.setDefaultFilter("nearest","nearest")
+    camera = require 'biblioteca/camera'
+    cam = camera()
+    width = love.graphics.getWidth()    -- x
+    height = love.graphics.getHeight()  -- y
+
+    phellipe = {}
+    phellipe.x = width/2
+    phellipe.y = height/2
+    phellipe.speed = 5
+    phellipe.sprite = love.graphics.newImage("imagens/Lyan/Lyan.png")
 
     soundsBackground = {}
     --
@@ -14,15 +23,6 @@ function love.load()
     soundsNotes.B = love.audio.newSource("sons/notas/B.mp3", "static")    -- Si
     soundsNotes.C6 = love.audio.newSource("sons/notas/C-.mp3", "static")   -- Dó uma oitava acima
     soundsNotes.D6 = love.audio.newSource("sons/notas/D-.mp3", "static")   -- Ré uma oitava acima
-
-    --[[
-    ** informacoes do Phellipe **
-    Phellipe = {}
-    Phellipe.speed = 5
-    Phellipe.sprite = love.graphics.newImage('caminho/para/imagem/do/personagem.png') -- COLCAR A IMAGEM DELE QUANDO ESTIVER PRONTA
-    Phellipe.x = width/2
-    Phellipe.y = height/2
-    ]]
 
     --[[ 
     background = {}
@@ -38,9 +38,22 @@ function love.load()
 end
 
 function love.update(dt)
+    -- andar
+    if love.keyboard.isDown("d") then
+        phellipe.x = phellipe.x + phellipe.speed
+    elseif love.keyboard.isDown("a") then
+        phellipe.x = phellipe.x - phellipe.speed
+    elseif love.keyboard.isDown("w") then
+        phellipe.y = phellipe.y - phellipe.speed
+    elseif love.keyboard.isDown("s") then
+        phellipe.y = phellipe.y + phellipe.speed
+    end
+
+
 end
 
 function love.draw()
+    love.graphics.draw(phellipe.sprite, phellipe.x, phellipe.y, 0, 5, 5)
 end
 
 function love.keypressed(key)
